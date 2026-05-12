@@ -40,7 +40,7 @@
     "@id": "https://pressurepal916.com/#business",
     "name": "Pressure Pals LLC",
     "image": "https://pressurepal916.com/images/og-image.jpg",
-    "logo": "https://pressurepal916.com/images/logo.svg",
+    "logo": "https://pressurepal916.com/images/logo-pen.png",
     "url": "https://pressurepal916.com/",
     "telephone": "+19162761592",
     "email": "pressure.pals916@gmail.com",
@@ -195,14 +195,21 @@
     .why-mosaic img:first-child{grid-column:1/-1;height:220px}
     .gallery-wrap{max-width:1100px;margin:0 auto}
     .equipment-section{background:rgba(0,52,114,0.18);border-top:1px solid rgba(11,146,212,0.12);border-bottom:1px solid rgba(11,146,212,0.12)}
-    .equipment-grid{max-width:1100px;margin:2.5rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .equipment-hero{max-width:1100px;margin:2.5rem auto 0;border-radius:10px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.4);border:1px solid rgba(11,146,212,0.2)}
+    .equipment-hero img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+    .equipment-grid{max-width:1100px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
     .equip-card{background:rgba(1,11,28,0.55);border:1px solid rgba(11,146,212,0.2);border-radius:9px;padding:1.4rem 1.2rem;transition:border-color 0.2s,transform 0.2s,background 0.2s}
     .equip-card:hover{border-color:rgba(20,182,178,0.45);transform:translateY(-3px);background:rgba(1,11,28,0.7)}
     .equip-icon{font-size:1.8rem;margin-bottom:0.7rem}
     .equip-name{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;color:var(--white);margin-bottom:0.4rem}
     .equip-spec{font-size:0.85rem;color:rgba(245,249,255,0.6);line-height:1.55}
-    @media(max-width:900px){.equipment-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.equipment-grid{grid-template-columns:1fr;gap:0.7rem}.equip-card{padding:1.1rem}}
+    .equipment-details{max-width:1100px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .equip-detail{border-radius:8px;overflow:hidden;background:rgba(1,11,28,0.55);border:1px solid rgba(11,146,212,0.2);transition:border-color 0.2s,transform 0.2s}
+    .equip-detail:hover{border-color:rgba(20,182,178,0.4);transform:translateY(-3px)}
+    .equip-detail img{width:100%;height:200px;object-fit:cover;display:block}
+    .equip-detail-caption{padding:0.75rem 1rem;font-size:0.82rem;color:rgba(245,249,255,0.72);text-align:center;line-height:1.4}
+    @media(max-width:900px){.equipment-grid{grid-template-columns:1fr 1fr}.equipment-details{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.equipment-grid{grid-template-columns:1fr;gap:0.7rem}.equip-card{padding:1.1rem}.equipment-details{grid-template-columns:1fr;gap:0.7rem}.equip-detail img{height:240px}}
     .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem}
     .g-item{border-radius:7px;overflow:hidden;aspect-ratio:1;cursor:pointer;position:relative}
     .g-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 0.2s;pointer-events:none}
@@ -291,7 +298,12 @@
     .footer-brand-wrap img{height:44px;width:44px;object-fit:contain}
     .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:0.08em}
     .footer-brand span{color:var(--teal)}
-    footer p{font-size:0.74rem;color:rgba(245,249,255,0.3)}
+    footer p{font-size:0.74rem;color:rgba(245,249,255,0.3);width:100%;text-align:center;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(11,146,212,0.08)}
+    .footer-areas{width:100%;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(11,146,212,0.08);text-align:center}
+    .footer-areas-heading{font-family:'Bebas Neue',sans-serif;font-size:0.95rem;letter-spacing:0.15em;color:var(--teal);margin-bottom:0.8rem}
+    .footer-areas-links{display:flex;flex-wrap:wrap;justify-content:center;gap:0.4rem 1.3rem}
+    .footer-areas-links a{font-size:0.78rem;color:rgba(245,249,255,0.5);text-decoration:none;transition:color 0.2s}
+    .footer-areas-links a:hover{color:var(--teal)}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
     .reveal.visible{opacity:1;transform:none}
 
@@ -685,6 +697,9 @@
     <h2 class="section-title">THE RIGHT <span class="hl">EQUIPMENT</span></h2>
     <p style="margin-top:0.8rem;font-size:0.95rem;color:rgba(245,249,255,0.65);max-width:640px;margin-left:auto;margin-right:auto">We invest in commercial-grade tools so every job gets done right — not the rental-store stuff most guys show up with.</p>
   </div>
+  <div class="equipment-hero reveal">
+    <img loading="lazy" src="images/equipment-hero.jpg" alt="Pressure Pals full equipment setup with truck"/>
+  </div>
   <div class="equipment-grid">
     <div class="equip-card reveal">
       <div class="equip-icon">⚡</div>
@@ -715,6 +730,20 @@
       <div class="equip-icon">⚡</div>
       <div class="equip-name">Ryobi 3300 PSI Backup</div>
       <div class="equip-spec">2.4 GPM · 212cc engine · second rig for big jobs and crew efficiency</div>
+    </div>
+  </div>
+  <div class="equipment-details">
+    <div class="equip-detail reveal">
+      <img loading="lazy" src="images/equipment-detail-2.jpg" alt="Milwaukee Packout stack with Little Giant ladder"/>
+      <div class="equip-detail-caption">Organized Packout system &amp; multi-position ladder</div>
+    </div>
+    <div class="equip-detail reveal">
+      <img loading="lazy" src="images/equipment-detail-3.jpg" alt="Pressure Pals surface cleaners and accessories"/>
+      <div class="equip-detail-caption">Multiple surface cleaners for every job size</div>
+    </div>
+    <div class="equip-detail reveal">
+      <img loading="lazy" src="images/equipment-detail-1.jpg" alt="Organized fittings, adapters, and spare parts"/>
+      <div class="equip-detail-caption">Every fitting &amp; adapter — we don't cut corners</div>
     </div>
   </div>
 </section>
@@ -887,7 +916,7 @@
 </section>
 
 <footer>
-  <div class="footer-brand-wrap"><img loading="lazy" src="images/logo.svg" alt="Pressure Pals LLC"/><span class="footer-brand">Pressure<span>Pals LLC</span></span></div>
+  <div class="footer-brand-wrap"><img loading="lazy" src="images/logo-pen.png" alt="Pressure Pals LLC"/><span class="footer-brand">Pressure<span>Pals LLC</span></span></div>
   <div class="footer-socials">
     <a href="https://www.instagram.com/pressurepalspro" target="_blank" class="social-btn">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -901,6 +930,21 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
       TikTok
     </a>
+  </div>
+  <div class="footer-areas">
+    <div class="footer-areas-heading">Service Areas</div>
+    <div class="footer-areas-links">
+      <a href="/driveway-cleaning-roseville.html">Driveway Cleaning Roseville</a>
+      <a href="/driveway-cleaning-sacramento.html">Driveway Cleaning Sacramento</a>
+      <a href="/driveway-cleaning-lincoln.html">Driveway Cleaning Lincoln</a>
+      <a href="/house-washing-roseville.html">House Washing Roseville</a>
+      <a href="/house-washing-sacramento.html">House Washing Sacramento</a>
+      <a href="/concrete-cleaning-roseville.html">Concrete Cleaning Roseville</a>
+      <a href="/gutter-cleaning-roseville.html">Gutter Cleaning Roseville</a>
+      <a href="/patio-cleaning-rocklin.html">Patio Cleaning Rocklin</a>
+      <a href="/pressure-washing-folsom.html">Pressure Washing Folsom</a>
+      <a href="/pressure-washing-elk-grove.html">Pressure Washing Elk Grove</a>
+    </div>
   </div>
   <p>© 2026 Pressure Pals LLC · Greater Sacramento Area</p>
 </footer>
