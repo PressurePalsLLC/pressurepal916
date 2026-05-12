@@ -121,8 +121,18 @@
     .q-story-option input{accent-color:var(--teal);cursor:pointer}
     .q-story-rate{display:none}
     .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background:url("images/hero-driveway-clean.jpg") center center/cover no-repeat}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(1,24,58,0.93) 0%,rgba(1,24,58,0.72) 45%,rgba(1,24,58,0.2) 100%)}
+    .hero-bg{position:absolute;inset:0;display:flex}
+    .hero-bg-before,.hero-bg-after{flex:1;background-size:cover;background-position:center;position:relative}
+    .hero-bg-before{background-image:url("images/hero-before.jpg")}
+    .hero-bg-after{background-image:url("images/hero-after.jpg")}
+    .hero-bg-before::after,.hero-bg-after::after{content:'';position:absolute;inset:0}
+    .hero-bg-before::after{background:linear-gradient(to right,rgba(1,24,58,0.85) 0%,rgba(1,24,58,0.55) 100%)}
+    .hero-bg-after::after{background:linear-gradient(to right,rgba(1,24,58,0.35) 0%,rgba(1,24,58,0.6) 100%)}
+    .hero-split-label{position:absolute;top:50%;transform:translateY(-50%);z-index:3;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:0.18em;padding:0.55rem 1.3rem;border-radius:30px;backdrop-filter:blur(8px)}
+    .hero-split-label.before{left:1.5rem;background:rgba(1,11,28,0.7);border:1.5px solid rgba(255,100,100,0.5);color:#ff8a8a}
+    .hero-split-label.after{right:1.5rem;background:rgba(20,182,178,0.25);border:1.5px solid rgba(20,182,178,0.6);color:var(--teal)}
+    .hero-split-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:linear-gradient(to bottom,transparent 0%,rgba(20,182,178,0.6) 25%,rgba(20,182,178,0.9) 50%,rgba(20,182,178,0.6) 75%,transparent 100%);z-index:3;transform:translateX(-50%)}
+    @media(max-width:640px){.hero-split-label{font-size:0.78rem;padding:0.4rem 0.8rem;top:1.1rem;transform:none}.hero-split-label.before{left:1rem}.hero-split-label.after{right:1rem}}
     .hero-content{position:relative;z-index:2;padding:0 2.5rem 5.5rem;max-width:600px}
     .eyebrow{display:inline-block;font-size:0.73rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:0.9rem;border-left:3px solid var(--teal);padding-left:0.7rem}
     .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,7.5rem);line-height:0.92;letter-spacing:0.02em}
@@ -388,7 +398,14 @@
   <a href="#book" class="mobile-nav-link mobile-cta">Book Now</a>
 </div>
 
-<section class="hero"><div class="hero-bg"></div>
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-before"></div>
+    <div class="hero-bg-after"></div>
+  </div>
+  <div class="hero-split-divider"></div>
+  <span class="hero-split-label before">BEFORE</span>
+  <span class="hero-split-label after">AFTER</span>
   <div class="hero-content">
     <div class="eyebrow">Greater Sacramento Area</div>
     <h1>WE BLAST<br/><span class="blue">DIRT</span><br/><span class="teal">AWAY.</span></h1>
@@ -413,6 +430,38 @@
   <div class="stat-item reveal"><div class="stat-num">2 Pros</div><div class="stat-label">On Every Job</div></div>
 </div>
 
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">What Customers Say</div>
+      <h2 class="section-title">REAL <span class="hl">REVIEWS</span></h2>
+      <p style="margin-top:0.9rem;font-size:1rem;color:rgba(245,249,255,0.75)"><span style="color:#ffb648;letter-spacing:0.1em;font-size:1.1rem">★★★★★</span> &nbsp;<strong style="color:var(--teal)">5.0</strong> rating on Google · <strong>3 verified reviews</strong></p>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Had these guys come out to my duplex last Sunday — completed the whole driveway, side yard, and RV access. Great work, driveway is so bright and clean it looks like the concrete just got poured. Thank you for the good work, looking forward to working with you in the future."</p>
+        <div class="review-author">Jonathan Jackson</div>
+        <div class="review-meta">Driveway, Side Yard &amp; RV Access · ★★★★★</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excellent crew to work with — had my job done in half the time that was expected. 10 out of 10 would recommend."</p>
+        <div class="review-author">James Pallas</div>
+        <div class="review-meta">Pressure Washing · ★★★★★</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Amazing service and even better ownership. These guys running this business are stand-up professionals that see the job through from start to finish. Top notch service with great attention to detail. Definitely recommend Pressure Pals to anyone!"</p>
+        <div class="review-author">Cory Howell</div>
+        <div class="review-meta">Pressure Washing · ★★★★★</div>
+      </div>
+    </div>
+    <p class="reviews-cta">Rated <strong style="color:var(--teal)">5.0 ★</strong> on Google · <a href="https://g.page/r/CTuQGgcxalxCEAE" target="_blank">Read all reviews</a> or <a href="https://g.page/r/CTuQGgcxalxCEAE/review" target="_blank">leave your own</a>.</p>
+  </div>
+</section>
+
 <section id="services">
   <div class="section-header reveal"><div class="section-eyebrow">What We Clean</div><h2 class="section-title">OUR <span class="hl">SERVICES</span></h2></div>
   <div class="services-grid">
@@ -424,65 +473,6 @@
     <div class="svc-card reveal"><img loading="lazy" class="svc-img" src="images/service-gutter.jpg" alt="Gutter cleaning"/><div class="svc-body"><div class="svc-name">Gutters</div><div class="svc-price">From <strong>$1.50</strong>/linear ft</div><p class="svc-desc">Exterior gutter brightening — remove streaks and oxidation for a like-new finish.</p></div></div>
   </div>
   <p class="services-note reveal">$100 minimum · 10% off when you book 3+ services · First-time customers get cheapest service free · <a href="#quote" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(20,182,178,0.4)">Get your instant estimate</a></p>
-</section>
-
-<section class="ba-section" id="results">
-  <div class="ba-inner">
-    <div class="section-header reveal"><div class="section-eyebrow">The Proof</div><h2 class="section-title">BEFORE &amp; <span class="hl">AFTER</span></h2></div>
-    <div class="ba-label reveal">WALKWAYS</div>
-    <div class="ba-grid">
-      <div class="ba-card reveal"><img loading="lazy" src="images/ba-walkway-before.jpg" alt="Walkway before pressure washing"/><div class="ba-pill">Before</div></div>
-      <div class="ba-card reveal"><img loading="lazy" src="images/ba-walkway-after.jpg" alt="Walkway after pressure washing"/><div class="ba-pill after">After</div></div>
-    </div>
-    <div class="ba-label reveal" style="margin-top:2rem;">PATIOS</div>
-    <div class="ba-grid">
-      <div class="ba-card reveal"><img loading="lazy" src="images/ba-patio-before.jpg" alt="Patio before pressure washing"/><div class="ba-pill">Before</div></div>
-      <div class="ba-card reveal"><img loading="lazy" src="images/ba-patio-after.jpg" alt="Patio after pressure washing"/><div class="ba-pill after">After</div></div>
-    </div>
-    <div class="ba-label reveal" style="margin-top:2rem;">GUTTERS</div>
-    <div class="ba-grid">
-      <div class="ba-card reveal"><img loading="lazy" src="images/ba-gutter-before.jpg" alt="Gutter before pressure washing"/><div class="ba-pill">Before</div></div>
-      <div class="ba-card reveal"><img loading="lazy" src="images/ba-gutter-after.jpg" alt="Gutter after pressure washing"/><div class="ba-pill after">After</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="why-inner">
-    <div class="why-text reveal">
-      <div class="section-eyebrow">Why Pressure Pals LLC</div>
-      <h2>LOCAL PROS.<br/>REAL <span style="color:var(--teal)">RESULTS.</span></h2>
-      <p>We're your Sacramento-area neighbors — not a franchise, not a call center. When you book with Pressure Pals LLC, you get two dedicated pros who take pride in the work.</p>
-      <div class="perks">
-        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Locally owned &amp; operated</strong> — we live and work in the same communities we serve.</div></div>
-        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Transparent pricing</strong> — free quotes, no hidden fees, no surprises.</div></div>
-        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Property-safe techniques</strong> — right pressure for every surface type.</div></div>
-        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Fast turnaround</strong> — most jobs completed in a single visit.</div></div>
-      </div>
-    </div>
-    <div class="why-mosaic reveal">
-      <img loading="lazy" src="images/team-at-work.jpg" alt="Jacob from Pressure Pals cleaning a driveway"/>
-      <img loading="lazy" src="images/team-pressure-washing.jpg" alt="Pressure washing in action"/>
-      <img loading="lazy" src="images/team-surface-cleaner.jpg" alt="Surface cleaner equipment"/>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0;">
-  <div class="section-header reveal"><div class="section-eyebrow">Our Work</div><h2 class="section-title">RECENT <span class="hl">JOBS</span></h2></div>
-  <div class="gallery-wrap">
-    <div class="gallery-grid">
-      <div class="g-item wide reveal"><img loading="lazy" src="images/gallery-baseball-wide.jpg" alt="Commercial baseball field cleaning"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-dugout-before.jpg" alt="Dugout before"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-dugout-after.jpg" alt="Dugout after"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-baseball-after.jpg" alt="Baseball field after"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-side-before.jpg" alt="Side walkway before"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-side-after.jpg" alt="Side walkway after"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-curb-before.jpg" alt="Curb before"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-curb-after.jpg" alt="Curb after"/></div>
-      <div class="g-item reveal"><img loading="lazy" src="images/gallery-midclean.jpg" alt="Mid clean"/></div>
-    </div>
-  </div>
 </section>
 
 <section class="quote-section" id="quote">
@@ -564,6 +554,88 @@
   </div>
 </section>
 
+<section class="ba-section" id="results">
+  <div class="ba-inner">
+    <div class="section-header reveal"><div class="section-eyebrow">The Proof</div><h2 class="section-title">BEFORE &amp; <span class="hl">AFTER</span></h2></div>
+    <div class="ba-label reveal">WALKWAYS</div>
+    <div class="ba-grid">
+      <div class="ba-card reveal"><img loading="lazy" src="images/ba-walkway-before.jpg" alt="Walkway before pressure washing"/><div class="ba-pill">Before</div></div>
+      <div class="ba-card reveal"><img loading="lazy" src="images/ba-walkway-after.jpg" alt="Walkway after pressure washing"/><div class="ba-pill after">After</div></div>
+    </div>
+    <div class="ba-label reveal" style="margin-top:2rem;">PATIOS</div>
+    <div class="ba-grid">
+      <div class="ba-card reveal"><img loading="lazy" src="images/ba-patio-before.jpg" alt="Patio before pressure washing"/><div class="ba-pill">Before</div></div>
+      <div class="ba-card reveal"><img loading="lazy" src="images/ba-patio-after.jpg" alt="Patio after pressure washing"/><div class="ba-pill after">After</div></div>
+    </div>
+    <div class="ba-label reveal" style="margin-top:2rem;">GUTTERS</div>
+    <div class="ba-grid">
+      <div class="ba-card reveal"><img loading="lazy" src="images/ba-gutter-before.jpg" alt="Gutter before pressure washing"/><div class="ba-pill">Before</div></div>
+      <div class="ba-card reveal"><img loading="lazy" src="images/ba-gutter-after.jpg" alt="Gutter after pressure washing"/><div class="ba-pill after">After</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="why-inner">
+    <div class="why-text reveal">
+      <div class="section-eyebrow">Why Pressure Pals LLC</div>
+      <h2>LOCAL PROS.<br/>REAL <span style="color:var(--teal)">RESULTS.</span></h2>
+      <p>We're your Sacramento-area neighbors — not a franchise, not a call center. When you book with Pressure Pals LLC, you get two dedicated pros who take pride in the work.</p>
+      <div class="perks">
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Locally owned &amp; operated</strong> — we live and work in the same communities we serve.</div></div>
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Transparent pricing</strong> — free quotes, no hidden fees, no surprises.</div></div>
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Property-safe techniques</strong> — right pressure for every surface type.</div></div>
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text"><strong>Fast turnaround</strong> — most jobs completed in a single visit.</div></div>
+      </div>
+    </div>
+    <div class="why-mosaic reveal">
+      <img loading="lazy" src="images/team-1.jpg" alt="Pressure Pals team cleaning a driveway"/>
+      <img loading="lazy" src="images/team-2.jpg" alt="Surface cleaning in action"/>
+      <img loading="lazy" src="images/team-3.jpg" alt="Pressure washing a driveway in Sacramento"/>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="section-header reveal"><div class="section-eyebrow">Our Work</div><h2 class="section-title">RECENT <span class="hl">JOBS</span></h2></div>
+  <div class="gallery-wrap">
+    <div class="gallery-grid">
+      <div class="g-item wide reveal"><img loading="lazy" src="images/gallery-01.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-02.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-03.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-04.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-05.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-06.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-07.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-08.jpg" alt="Recent pressure washing job"/></div>
+      <div class="g-item reveal"><img loading="lazy" src="images/gallery-09.jpg" alt="Roseville baseball field"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- SATISFACTION GUARANTEE SECTION -->
+<section class="guarantee-section">
+  <div class="guarantee-inner reveal">
+    <div class="guarantee-badge"><span>🛡️</span> OUR SATISFACTION GUARANTEE</div>
+    <p class="guarantee-text">We stand behind every job, 100%. If anything was missed or didn't meet your expectations, we'll come back out and make it right — <strong style="color:var(--teal);">free of charge, no questions asked.</strong></p>
+    <p class="guarantee-sub">Your satisfaction is the only standard we measure ourselves by. That's the Pressure Pals promise.</p>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section" id="book">
+  <div class="booking-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Schedule a Job</div>
+      <h2 class="section-title">BOOK YOUR <span class="hl">CLEANING</span></h2>
+      <p style="margin-top:0.8rem;font-size:0.92rem;font-weight:300;color:rgba(245,249,255,0.55);">Pick a time that works for you — we'll call to confirm the details and get you on the schedule.</p>
+    </div>
+    <div class="calendly-wrap reveal">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/pressure-pals916/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=01183a&text_color=f5f9ff&primary_color=14b6b2" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY CLEAN SECTION -->
 <section class="why-clean-section" id="why-clean">
   <div class="why-clean-inner">
@@ -618,43 +690,6 @@
   </div>
 </section>
 
-<!-- SATISFACTION GUARANTEE SECTION -->
-<section class="guarantee-section">
-  <div class="guarantee-inner reveal">
-    <div class="guarantee-badge"><span>🛡️</span> OUR SATISFACTION GUARANTEE</div>
-    <p class="guarantee-text">We stand behind every job, 100%. If anything was missed or didn't meet your expectations, we'll come back out and make it right — <strong style="color:var(--teal);">free of charge, no questions asked.</strong></p>
-    <p class="guarantee-sub">Your satisfaction is the only standard we measure ourselves by. That's the Pressure Pals promise.</p>
-  </div>
-</section>
-
-<!-- SERVICE AREA -->
-<section class="area-section" id="service-area">
-  <div class="area-inner reveal">
-    <div class="section-eyebrow">Where We Serve</div>
-    <h2 class="section-title">SERVING THE <span class="hl">GREATER SACRAMENTO AREA</span></h2>
-    <p style="margin-top:1rem;font-size:0.92rem;font-weight:300;color:rgba(245,249,255,0.6);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">Pressure Pals LLC provides professional pressure washing services across Sacramento and surrounding cities. Outside our area? Contact us — we may still be able to help.</p>
-    <div class="area-cities">
-      <span class="area-city">Sacramento</span>
-      <span class="area-city">Roseville</span>
-      <span class="area-city">Rocklin</span>
-      <span class="area-city">Elk Grove</span>
-      <span class="area-city">Folsom</span>
-      <span class="area-city">Citrus Heights</span>
-      <span class="area-city">Antelope</span>
-      <span class="area-city">Carmichael</span>
-      <span class="area-city">Fair Oaks</span>
-      <span class="area-city">Orangevale</span>
-      <span class="area-city">Granite Bay</span>
-      <span class="area-city">Lincoln</span>
-      <span class="area-city">Loomis</span>
-      <span class="area-city">North Highlands</span>
-      <span class="area-city">Rio Linda</span>
-      <span class="area-city">Natomas</span>
-    </div>
-    <p class="area-note">Serving the 916 &amp; 530 area codes · Free estimates · Locally owned</p>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
@@ -687,49 +722,31 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews-section" id="reviews">
-  <div class="reviews-inner">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">What Customers Say</div>
-      <h2 class="section-title">REAL <span class="hl">REVIEWS</span></h2>
-      <p style="margin-top:0.9rem;font-size:1rem;color:rgba(245,249,255,0.75)"><span style="color:#ffb648;letter-spacing:0.1em;font-size:1.1rem">★★★★★</span> &nbsp;<strong style="color:var(--teal)">5.0</strong> rating on Google · <strong>3 verified reviews</strong></p>
+<!-- SERVICE AREA -->
+<section class="area-section" id="service-area">
+  <div class="area-inner reveal">
+    <div class="section-eyebrow">Where We Serve</div>
+    <h2 class="section-title">SERVING THE <span class="hl">GREATER SACRAMENTO AREA</span></h2>
+    <p style="margin-top:1rem;font-size:0.92rem;font-weight:300;color:rgba(245,249,255,0.6);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">Pressure Pals LLC provides professional pressure washing services across Sacramento and surrounding cities. Outside our area? Contact us — we may still be able to help.</p>
+    <div class="area-cities">
+      <span class="area-city">Sacramento</span>
+      <span class="area-city">Roseville</span>
+      <span class="area-city">Rocklin</span>
+      <span class="area-city">Elk Grove</span>
+      <span class="area-city">Folsom</span>
+      <span class="area-city">Citrus Heights</span>
+      <span class="area-city">Antelope</span>
+      <span class="area-city">Carmichael</span>
+      <span class="area-city">Fair Oaks</span>
+      <span class="area-city">Orangevale</span>
+      <span class="area-city">Granite Bay</span>
+      <span class="area-city">Lincoln</span>
+      <span class="area-city">Loomis</span>
+      <span class="area-city">North Highlands</span>
+      <span class="area-city">Rio Linda</span>
+      <span class="area-city">Natomas</span>
     </div>
-    <div class="reviews-grid reveal">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Had these guys come out to my duplex last Sunday — completed the whole driveway, side yard, and RV access. Great work, driveway is so bright and clean it looks like the concrete just got poured. Thank you for the good work, looking forward to working with you in the future."</p>
-        <div class="review-author">Jonathan Jackson</div>
-        <div class="review-meta">Driveway, Side Yard &amp; RV Access · ★★★★★</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Excellent crew to work with — had my job done in half the time that was expected. 10 out of 10 would recommend."</p>
-        <div class="review-author">James Pallas</div>
-        <div class="review-meta">Pressure Washing · ★★★★★</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Amazing service and even better ownership. These guys running this business are stand-up professionals that see the job through from start to finish. Top notch service with great attention to detail. Definitely recommend Pressure Pals to anyone!"</p>
-        <div class="review-author">Cory Howell</div>
-        <div class="review-meta">Pressure Washing · ★★★★★</div>
-      </div>
-    </div>
-    <p class="reviews-cta">Rated <strong style="color:var(--teal)">5.0 ★</strong> on Google · <a href="https://g.page/r/CTuQGgcxalxCEAE" target="_blank">Read all reviews</a> or <a href="https://g.page/r/CTuQGgcxalxCEAE/review" target="_blank">leave your own</a>.</p>
-  </div>
-</section>
-
-<!-- BOOKING SECTION -->
-<section class="booking-section" id="book">
-  <div class="booking-inner">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">Schedule a Job</div>
-      <h2 class="section-title">BOOK YOUR <span class="hl">CLEANING</span></h2>
-      <p style="margin-top:0.8rem;font-size:0.92rem;font-weight:300;color:rgba(245,249,255,0.55);">Pick a time that works for you — we'll call to confirm the details and get you on the schedule.</p>
-    </div>
-    <div class="calendly-wrap reveal">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/pressure-pals916/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=01183a&text_color=f5f9ff&primary_color=14b6b2" style="min-width:320px;height:700px;"></div>
-    </div>
+    <p class="area-note">Serving the 916 &amp; 530 area codes · Free estimates · Locally owned</p>
   </div>
 </section>
 
